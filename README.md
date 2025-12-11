@@ -34,7 +34,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp
 https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties
 https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
 https://www.w3schools.com/jsref/event_stoppropagation.asp?utm_source=chatgpt.com
-https://stackoverflow.com/questions/40586761/how-to-generate-a-random-letter-when-clicking-a-button-in-js?
 
 best,
 sara
