@@ -33,7 +33,7 @@
     --text: #fdfad9;
 }
 
-/* source linked in README */
+/* not all original code (esp color var) */
 body {
     font-family: "Lilex", monospace;
     background: linear-gradient(180deg, var(--color-1) 0%, var(--color-2) 25%, var(--color-3) 50%, var(--color-4) 100%);
@@ -293,21 +293,21 @@ body {
     border-color: var(--text);
 }
 
-.section-title[data-font-family="novice witch"] {
+.section-title[data-font-family="font1"] {
     font-family: 'novice witch', sans-serif;
     font-variation-settings: 'wght' 700;
     text-transform: none;
     letter-spacing: 0.05em;
 }
 
-.section-title[data-font-family="change the web"] {
+.section-title[data-font-family="font2"] {
     font-family: 'change the web', sans-serif;
     font-variation-settings: 'wght' 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-.section-title[data-font-family="lost times"] {
+.section-title[data-font-family="font3"] {
     font-family: 'lost times', sans-serif;
     font-variation-settings: 'wght' 500;
     text-transform: none;
