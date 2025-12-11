@@ -1,0 +1,481 @@
+/* typefaces */
+
+@font-face {
+    font-family: 'novice witch';
+    src: url('assets/fonts/font1_novice witch/NewFontVF.woff2') format('woff2');
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'change the web';
+    src: url('assets/fonts/font2_changetheweb/ChangetheWebVF.woff2') format('woff2');
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'lost times';
+    src: url('assets/fonts/font3_losttimes/losttimesVF.woff2') format('woff2');
+    font-weight: 100 900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* gradient background */
+:root {
+    --color-1: #93d8ed;
+    --color-2: #89cb99;
+    --color-3: #009cbb;
+    --color-4: #283277;
+    --text: #fdfad9;
+}
+
+/* not all original code (esp color var) */
+body {
+    font-family: "Lilex", monospace;
+    background: linear-gradient(180deg, var(--color-1) 0%, var(--color-2) 25%, var(--color-3) 50%, var(--color-4) 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* header + footer */
+.header-bar, .footer-bar {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text);
+    border-top: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    text-transform: lowercase;
+}
+
+.header-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #2b3377;
+    z-index: 9999;
+}
+
+.footer-bar {
+    background: #2b3377;
+}
+
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-right, .footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+/* link to type specimen + styling */
+.type-specimen-link {
+    color: var(--text);
+    border: 2px solid var(--text);
+    border-radius: 50px;
+    padding: 0.15rem 0.75rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.type-specimen-link:hover {
+    opacity: 0.7;
+}
+
+.main-container {
+    padding-top: 80px;
+}
+
+/* zone scrolling bars */
+.zone-bar {
+    height: 100px;
+    border-top: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    overflow: hidden;
+}
+
+/* zone first color */
+.zone-bar:nth-child(1) { background: #c8e9ea; }
+.zone-bar:nth-child(3) { background: #91d6ec; }
+.zone-bar:nth-child(5) { background: #8acc9e; }
+.zone-bar:nth-child(7) { background: #00a8b3; }
+.zone-bar:nth-child(9) { background: #008caf; }
+
+/* i feel like this is not the right way to do this but
+ i didn't want it to overlap the header */
+.main-container > .zone-bar:first-child {
+    margin-top: 1rem;
+}
+
+/* animation for scrolling text */
+.scrolling-text {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+    height: 100%;
+    padding: 0 2rem;
+}
+
+.scrolling-text span {
+    font-size: 1rem;
+    color: var(--text);
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+}
+
+.zone-label-text {
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+.creature-img {
+    height: 60px;
+    width: auto;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+@keyframes scroll {
+    to { transform: translateX(-50%); }
+}
+
+/* type specimen sections */
+.section {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+/* not my code but wanted to figure out scrolling gradient*/
+.section-0 { background: var(--color-1); }
+.section-1 { background: linear-gradient(180deg, var(--color-1) 0%, var(--color-2) 100%); }
+.section-2 { background: linear-gradient(180deg, var(--color-2) 0%, var(--color-3) 100%); }
+.section-3 { background: linear-gradient(180deg, var(--color-3) 0%, var(--color-4) 100%); }
+.section-4 { background: var(--color-4); }
+
+.section-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.section-1 .section-content,
+.section-2 .section-content,
+.section-3 .section-content {
+    text-align: left;
+}
+
+/* intro/welcome section */
+.welcome-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.welcome-title {
+    width: clamp(450px, 60vw, 750px);
+    height: auto;
+    flex-shrink: 0;
+}
+
+.welcome-text {
+    flex: 1;
+    min-width: 250px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.8;
+    text-align: left;
+    text-transform: lowercase;
+    font-style: italic;
+    margin: 0;
+}
+
+/* font control */
+.font-controls {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--text);
+    border-radius: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.control-group label {
+    font-size: 0.9rem;
+    text-transform: lowercase;
+    min-width: 60px;
+}
+
+.slider {
+    width: 100%;
+    min-width: 150px;
+    max-width: 200px;
+    height: 4px;
+    background: rgba(253, 250, 217, 0.3);
+    border-radius: 2px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* sliders */
+.slider::-webkit-slider-thumb,
+.slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--text);
+    border: 2px solid var(--text);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.control-group span {
+    font-size: 0.9rem;
+    min-width: 50px;
+    text-align: right;
+}
+
+/* variable fonts, clamp is not my code*/
+.variable-font {
+    font-size: clamp(3rem, 10vw, 10rem);
+    margin-bottom: 3rem;
+    line-height: 1.1;
+}
+
+.section-title {
+    font-size: clamp(2rem, 8vw, 6.5rem);
+    cursor: text;
+    user-select: text;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    transition: border-color 0.3s ease;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.section-title:focus {
+    outline: none;
+    border-color: var(--text);
+}
+
+.section-title[data-font-family="font1"] {
+    font-family: 'novice witch', sans-serif;
+    font-variation-settings: 'wght' 700;
+    text-transform: none;
+    letter-spacing: 0.05em;
+}
+
+.section-title[data-font-family="font2"] {
+    font-family: 'change the web', sans-serif;
+    font-variation-settings: 'wght' 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.section-title[data-font-family="font3"] {
+    font-family: 'lost times', sans-serif;
+    font-variation-settings: 'wght' 500;
+    text-transform: none;
+}
+
+/* buttons */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    font-family: "Lilex", monospace;
+    font-size: 0.9rem;
+    background: transparent;
+    border: 2px solid var(--text);
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 50px;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn:hover,
+.btn:active {
+    background: var(--text);
+    color: var(--color-4);
+}
+
+/* font description / credit description */
+.font-description,
+.credits-info {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
+    border: 2px solid var(--text);
+    border-radius: 50px;
+    display: none;
+    width: calc(100% - 2rem);
+}
+
+.font-description.active,
+.credits-info.active {
+    display: block;
+}
+
+.font-description h3,
+.credits-info h3 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+.font-description p,
+.credits-info p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    text-transform: lowercase;
+}
+
+/* byebye now */
+.farewell-text {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+/* responsive webpage design bc i am a very good designer */
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 1.5rem;
+    }
+
+    .zone-bar {
+        height: 80px;
+    }
+
+    .welcome-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .welcome-title {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .welcome-text {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .variable-font,
+    .section-title {
+        font-size: clamp(1.5rem, 8vw, 4rem);
+    }
+
+    .section-title {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .font-controls {
+        gap: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .font-description,
+    .credits-info {
+        padding: 1rem 1.5rem;
+        margin: 1.5rem auto 0;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .creature-img {
+        height: 50px;
+    }
+
+    .scrolling-text {
+        gap: 2rem;
+    }
+
+    .scrolling-text span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 1.5rem 1rem;
+    }
+
+    .zone-bar {
+        height: 60px;
+    }
+
+    .creature-img {
+        height: 40px;
+    }
+
+    .scrolling-text {
+        gap: 1.5rem;
+    }
+
+    .scrolling-text span {
+        font-size: 0.75rem;
+    }
+}

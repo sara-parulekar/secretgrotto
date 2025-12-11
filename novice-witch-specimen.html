@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novice Witch - Type Specimen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- CSS STYLING
+    (i did everything on one page bc that seemed easiest)
+     -->
+    <style>
+        @font-face {
+            font-family: 'novice witch';
+            src: url('assets/fonts/font1_novice witch/NewFontVF.woff2') format('woff2');
+            font-weight: 100 900;
+        }
+
+        body {
+            background: linear-gradient(180deg, #2a3477 0%, #8165ac 100%);
+            background-size: 100% 200%;
+            animation: gradientShift 8s ease infinite;
+            cursor: default;
+        }
+
+        /* background animation */
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 0% 100%; }
+        }
+
+        .specimen-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 2rem 3rem;
+            position: relative;
+        }
+
+        .main-title {
+            font-family: 'novice witch', sans-serif;
+            font-size: clamp(2rem, 8vw, 5rem);
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 1rem;
+            font-variation-settings: 'wght' 100;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .wand-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .wand-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1rem, 4vw, 2rem);
+            border: 2px solid var(--text);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* what happens when you hover over the wand container */
+        .wand-container:hover {
+            background: var(--text);
+        }
+
+        .wand-container:hover .wand-label {
+            color: var(--color-4);
+        }
+
+        .wand-container:hover .wand-img {
+            filter: brightness(0) invert(0);
+        }
+
+        .wand-label {
+            font-family: "Lilex", monospace;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--text);
+            text-transform: lowercase;
+            letter-spacing: 0.05em;
+            text-align: center;
+            transition: color 0.3s ease;
+            overflow-wrap: break-word;
+        }
+
+        .wand-img {
+            height: 24px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s ease;
+        }
+
+        /* glowing magical letters when you click on them. yay! i did need help for this...*/
+        .magic-letter {
+            font-family: 'novice witch', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--text);
+            position: absolute;
+            font-variation-settings: 'wght' 700, 'POSI' 0;
+            animation: posiFluctuate 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @keyframes posiFluctuate {
+            0%, 100% { font-variation-settings: 'wght' 700, 'POSI' 0; }
+            50% { font-variation-settings: 'wght' 700, 'POSI' 100; }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(253, 250, 217, 0.5),
+                             0 0 20px rgba(253, 250, 217, 0.3),
+                             0 0 30px rgba(253, 250, 217, 0.2);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(253, 250, 217, 0.8),
+                             0 0 30px rgba(253, 250, 217, 0.5),
+                             0 0 40px rgba(253, 250, 217, 0.3);
+            }
+        }
+
+        .download-section {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        .wand-follower {
+            position: fixed;
+            width: 48px;
+            height: 48px;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+
+        .wand-follower.active {
+            display: block;
+        }
+
+        .wand-follower img {
+            width: 100%;
+            height: 100%;
+            filter: brightness(0) invert(1);
+        }
+
+        @media (max-width: 768px) {
+            .main-title { margin-bottom: 3rem; }
+            .wand-section { padding: 0 1rem; }
+            .wand-container { padding: 0.65rem 1.5rem; gap: 0.6rem; }
+            .wand-label { font-size: clamp(0.85rem, 2.5vw, 1rem); }
+            .wand-img { height: 22px; }
+            .download-section { bottom: 60px; }
+        }
+
+        @media (max-width: 480px) {
+            .specimen-container { padding: 80px 1rem 2rem; }
+            .main-title {
+                font-size: clamp(1.5rem, 6vw, 3rem);
+                margin-bottom: 2rem;
+            }
+            .wand-section { padding: 0 0.5rem; }
+            .wand-container { padding: 0.6rem 1rem; gap: 0.5rem; }
+            .wand-label {
+                font-size: clamp(0.75rem, 3vw, 0.9rem);
+                line-height: 1.4;
+            }
+            .wand-img { height: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-bar">
+        <div class="header-left">
+            <a href="index.html" style="color: var(--text); text-decoration: none;">secret grotto type</a>
+        </div>
+        <div class="header-center">novice witch specimen</div>
+        <div class="header-right">
+            <a href="novice-witch-specimen.html" class="type-specimen-link">type specimen <span class="arrow">↗</span></a>
+        </div>
+    </header>
+
+    <main class="specimen-container" id="mainContainer">
+        <h1 class="main-title">THERE IS MAGICK ALL AROUND YOU!</h1>
+        <div class="wand-section">
+            <div class="wand-container" id="wandContainer">
+                <span class="wand-label" id="wandLabel">take the wand, and find your magick:</span>
+                <img src="assets/images/wand.png" alt="wand" class="wand-img" id="wandImg">
+            </div>
+        </div>
+    </main>
+
+    <div class="wand-follower" id="wandFollower">
+        <img src="assets/images/wand.png" alt="wand">
+    </div>
+
+    <div class="download-section">
+        <button class="btn" id="downloadBtn">download novice witch</button>
+    </div>
+
+    <footer class="footer-bar">
+        <div class="footer-left">sara parulekar 2025</div>
+        <div class="footer-right">site typeset in lilex</div>
+    </footer>
+
+    <!-- i did have to look up some stuff for this... -->
+    <script>
+        const wandContainer = document.getElementById('wandContainer');
+        const wandLabel = document.getElementById('wandLabel');
+        const wandImg = document.getElementById('wandImg');
+        const wandFollower = document.getElementById('wandFollower');
+        const mainContainer = document.getElementById('mainContainer');
+        const downloadBtn = document.getElementById('downloadBtn');
+        let wandActive = false;
+
+        wandContainer.addEventListener('click', (e) => {
+            e.stopPropagation();
+            wandLabel.textContent = 'begin your magick journey. click with your wand to perform a summoning spell';
+            wandImg.style.display = 'none';
+            wandFollower.classList.add('active');
+            wandActive = true;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (wandActive) {
+                wandFollower.style.left = (e.clientX - 24) + 'px';
+                wandFollower.style.top = (e.clientY - 24) + 'px';
+            }
+        });
+
+        mainContainer.addEventListener('click', (e) => {
+            if (!wandActive || e.target.closest('.download-section, .wand-container')) return;
+
+            const letter = document.createElement('div');
+            letter.className = 'magic-letter';
+            letter.textContent = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+            letter.style.left = e.clientX + 'px';
+            letter.style.top = e.clientY + 'px';
+            letter.style.transform = 'translate(-50%, -50%)';
+            mainContainer.appendChild(letter);
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = 'assets/fonts/font1_novice witch/novicewitch.ttf';
+            link.download = 'novicewitch.ttf';
+            link.click();
+        });
+    </script>
+</body>
+</html>

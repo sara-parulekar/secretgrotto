@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Grotto Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- sticky header w/ name, depth, and link to type specimen -->
+    <header class="header-bar">
+        <div class="header-left">secret grotto type</div>
+        <div class="header-center">depth: <span id="depth-value">0M</span></div>
+        <div class="header-right">
+    <a href="novice-witch-specimen.html" class="type-specimen-link">
+        type specimen <span class="arrow">↗</span>
+    </a>
+</div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- sunlight zone scrolling bar -->
+        <div class="zone-bar">
+            <div class="scrolling-text">
+                <span class="zone-label-text">0-200 m: the sunlight zone</span>
+                <img src="assets/images/creature1.png" alt="" class="creature-img">
+                <span>abundant sunlight</span>
+                <img src="assets/images/creature2.png" alt="" class="creature-img">
+                <span>warm temperatures</span>
+                <img src="assets/images/creature3.png" alt="" class="creature-img">
+                <span>high oxygen</span>
+                <span class="zone-label-text">0-200 m: the sunlight zone</span>
+                <img src="assets/images/creature1.png" alt="" class="creature-img">
+                <span>abundant sunlight</span>
+                <img src="assets/images/creature2.png" alt="" class="creature-img">
+                <span>warm temperatures</span>
+                <img src="assets/images/creature3.png" alt="" class="creature-img">
+                <span>high oxygen</span>
+            </div>
+        </div>
+
+        <!-- page intro -->
+        <section class="section section-0">
+            <div class="section-content welcome-section">
+                <div class="welcome-container">
+                    <img src="assets/images/Secret_Grotto.png" alt="Secret Grotto" class="welcome-title">
+                    <p class="welcome-text">swim deeper to uncover trinkets, baubles, and a striking collection of typefaces.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- twilight zone scrolling bar -->
+        <div class="zone-bar">
+    <div class="scrolling-text">
+        <span class="zone-label-text">200-1000 m: the twilight zone</span>
+        <img src="assets/images/creature4.png" alt="" class="creature-img">
+        <span>faint filtered sunlight</span>
+        <img src="assets/images/creature5.png" alt="" class="creature-img">
+        <span>no photosynthesis</span>
+        <img src="assets/images/creature6.png" alt="" class="creature-img">
+        <span>increasing pressure</span>
+        <span class="zone-label-text">200-1000 m: the twilight zone</span>
+        <img src="assets/images/creature4.png" alt="" class="creature-img">
+        <span>faint filtered sunlight</span>
+        <img src="assets/images/creature5.png" alt="" class="creature-img">
+        <span>no photosynthesis</span>
+        <img src="assets/images/creature6.png" alt="" class="creature-img">
+        <span>increasing pressure</span>
+    </div>
+</div>
+
+        <!-- novice witch section 1 -->
+        <section class="section section-1">
+            <div class="section-content">
+                <div class="font-controls">
+                    <div class="control-group">
+                        <label for="position-slider">position</label>
+                        <input type="range" id="position-slider" min="0" max="100" value="0" class="slider">
+                        <span id="position-value">0</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="size-slider-1">size</label>
+                        <input type="range" id="size-slider-1" min="3" max="15" value="6.5" step="0.1" class="slider">
+                        <span id="size-value-1">6.5rem</span>
+                    </div>
+                </div>
+                <h2 class="variable-font section-title" data-font-family="font1">q NOVICE WITCH n</h2>
+                <div class="button-group">
+                    <button class="btn font-name-btn" data-font="1">novice witch</button>
+                    <button class="btn credits-btn" data-section="1">credits</button>
+                    <button class="btn download-btn" data-font="font1">download</button>
+                </div>
+                <div class="font-description" id="description-1">
+                    <h3>Description</h3>
+                    <p>novice witch is a decorative pixel font with unique variable ornamentations. a litte magical, if you will.</p>
+                </div>
+                <div class="credits-info" id="credits-1">
+                    <h3>Credits</h3>
+                    <p>Designer: Sara Parulekar</p>
+                    <p>Year: 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- midnight zone scrolling bar -->
+        <div class="zone-bar">
+    <div class="scrolling-text">
+        <span class="zone-label-text">1000-4000 m: the midnight zone</span>
+        <img src="assets/images/creature7.png" alt="" class="creature-img">
+        <span>total darkness</span>
+        <img src="assets/images/creature8.png" alt="" class="creature-img">
+        <span>intense pressure</span>
+        <img src="assets/images/creature9.png" alt="" class="creature-img">
+        <span>cold</span>
+        <span class="zone-label-text">1000-4000 m: the midnight zone</span>
+        <img src="assets/images/creature7.png" alt="" class="creature-img">
+        <span>total darkness</span>
+        <img src="assets/images/creature8.png" alt="" class="creature-img">
+        <span>intense pressure</span>
+        <img src="assets/images/creature9.png" alt="" class="creature-img">
+        <span>cold</span>
+    </div>
+</div>
+
+        <!-- change the web section 2 -->
+        <section class="section section-2">
+            <div class="section-content">
+                <div class="font-controls">
+                    <div class="control-group">
+                        <label for="stretch-slider">stretch</label>
+                        <input type="range" id="stretch-slider" min="0" max="100" value="100" class="slider">
+                        <span id="stretch-value">100</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="size-slider">size</label>
+                        <input type="range" id="size-slider" min="3" max="15" value="6.5" step="0.1" class="slider">
+                        <span id="size-value">6.5rem</span>
+                    </div>
+                </div>
+                <h2 class="variable-font section-title" data-font-family="font2">CHANGE THE WEB</h2>
+                <div class="button-group">
+                    <button class="btn font-name-btn" data-font="2">change the web</button>
+                    <button class="btn credits-btn" data-section="2">credits</button>
+                    <button class="btn download-btn" data-font="font2">download</button>
+                </div>
+                <div class="font-description" id="description-2">
+                    <h3>Description</h3>
+                    <p>a take on the heal the web typeface with an additional variable axis. what happens if we don't try to heal the web, but change it?</p>
+                </div>
+                <div class="credits-info" id="credits-2">
+                    <h3>Credits</h3>
+                    <p>designer: original typeface by Rainbow Unicorn & Jakub Kanior, edited by Sara Parulekar</p>
+                    <p>Year: 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- abyssal zone scrolling bar -->
+        <div class="zone-bar">
+    <div class="scrolling-text">
+        <span class="zone-label-text">4000-6000 m: the abyssal zone</span>
+        <img src="assets/images/creature10.png" alt="" class="creature-img">
+        <span>extreme pressure</span>
+        <img src="assets/images/creature11.png" alt="" class="creature-img">
+        <span>utter blackness</span>
+        <img src="assets/images/creature12.png" alt="" class="creature-img">
+        <span>vast plains</span>
+        <span class="zone-label-text">4000-6000 m: the abyssal zone</span>
+        <img src="assets/images/creature10.png" alt="" class="creature-img">
+        <span>extreme pressure</span>
+        <img src="assets/images/creature11.png" alt="" class="creature-img">
+        <span>utter blackness</span>
+        <img src="assets/images/creature12.png" alt="" class="creature-img">
+        <span>vast plains</span>
+    </div>
+</div>
+
+        <!-- lost times section 3 -->
+        <section class="section section-3">
+            <div class="section-content">
+                <div class="font-controls">
+                    <div class="control-group">
+                        <label for="move-slider">move</label>
+                        <input type="range" id="move-slider" min="0" max="100" value="0" class="slider">
+                        <span id="move-value">0</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="size-slider-3">size</label>
+                        <input type="range" id="size-slider-3" min="3" max="15" value="6.5" step="0.1" class="slider">
+                        <span id="size-value-3">6.5rem</span>
+                    </div>
+                </div>
+                <h2 class="variable-font section-title" data-font-family="font3">T lost tGmes R</h2>
+                <div class="button-group">
+                    <button class="btn font-name-btn" data-font="3">lost times</button>
+                    <button class="btn credits-btn" data-section="3">credits</button>
+                    <button class="btn download-btn" data-font="font3">download</button>
+                </div>
+                <div class="font-description" id="description-3">
+                    <h3>Description</h3>
+                    <p>a handwritten variable font, a reminder of the things we've lost. you might never find those objects again, but they might show up in this typeface!</p>
+                </div>
+                <div class="credits-info" id="credits-3">
+                    <h3>Credits</h3>
+                    <p>Designer: Sara Parulekar</p>
+                    <p>Year: 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- hadal zone scrolling bar -->
+        <div class="zone-bar">
+    <div class="scrolling-text">
+        <span class="zone-label-text">6000 m-???: the hadal zone</span>
+        <img src="assets/images/creature13.png" alt="" class="creature-img">
+        <span>deepest</span>
+        <img src="assets/images/creature14.png" alt="" class="creature-img">
+        <span>darkest</span>
+        <img src="assets/images/creature15.png" alt="" class="creature-img">
+        <span>high pressure</span>
+        <img src="assets/images/creature13.png" alt="" class="creature-img">
+        <span>cold</span>
+        <span class="zone-label-text">6000 m-???: the hadal zone</span>
+        <img src="assets/images/creature13.png" alt="" class="creature-img">
+        <span>deepest</span>
+        <img src="assets/images/creature14.png" alt="" class="creature-img">
+        <span>darkest</span>
+        <img src="assets/images/creature15.png" alt="" class="creature-img">
+        <span>high pressure</span>
+        <img src="assets/images/creature13.png" alt="" class="creature-img">
+        <span>cold</span>
+    </div>
+</div>
+
+        <!-- website end section 4 -->
+        <section class="section section-4">
+            <div class="section-content farewell-section">
+                <p class="farewell-text">thanks for stopping by! come back soon-who knows what new treasures will find its way into this secret grotto.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer w/ font credit -->
+    <footer class="footer-bar">
+        <div class="footer-left">sara parulekar 2025</div>
+        <div class="footer-right">site typeset in lilex</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
