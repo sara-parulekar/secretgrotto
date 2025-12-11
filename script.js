@@ -30,7 +30,7 @@ document.querySelectorAll('.credits-btn').forEach(button => {
     });
 });
 
-// button for downloading
+// button for downloading (source linked in README)
 const fontFiles = {
     'font1': 'assets/fonts/font1_novice witch/novicewitch.ttf',
     'font2': 'assets/fonts/font2_changetheweb/ChangetheWebVF.ttf',
@@ -50,7 +50,7 @@ document.querySelectorAll('.download-btn').forEach(button => {
     });
 });
 
-// code for variable fonts ** NOT MY OWN **
+// code for variable fonts (source linked in README)
 const fontConfigs = {
     'font1': { axis: 'POSI', defaultWght: 700, sliderId: 'position-slider', valueId: 'position-value', sizeSliderId: 'size-slider-1', sizeValueId: 'size-value-1', initialValue: 0 },
     'font2': { axis: 'STCH', defaultWght: 700, sliderId: 'stretch-slider', valueId: 'stretch-value', sizeSliderId: 'size-slider', sizeValueId: 'size-value', initialValue: 100 },
@@ -105,6 +105,7 @@ function animateAxis(title, config) {
         });
     }
 
+    // linked in readme
     const sizeSlider = document.getElementById(config.sizeSliderId);
     const sizeValue = document.getElementById(config.sizeValueId);
     if (sizeSlider) {

@@ -33,7 +33,7 @@
     --text: #fdfad9;
 }
 
-/* not all original code (esp color var) */
+/* source linked in README */
 body {
     font-family: "Lilex", monospace;
     background: linear-gradient(180deg, var(--color-1) 0%, var(--color-2) 25%, var(--color-3) 50%, var(--color-4) 100%);
@@ -110,7 +110,7 @@ body {
     overflow: hidden;
 }
 
-/* zone first color */
+/* zone first color (source linked in README) */
 .zone-bar:nth-child(1) { background: #c8e9ea; }
 .zone-bar:nth-child(3) { background: #91d6ec; }
 .zone-bar:nth-child(5) { background: #8acc9e; }
@@ -268,7 +268,7 @@ body {
     text-align: right;
 }
 
-/* variable fonts, clamp is not my code*/
+/* source for clamp linked in README */
 .variable-font {
     font-size: clamp(3rem, 10vw, 10rem);
     margin-bottom: 3rem;
@@ -293,21 +293,21 @@ body {
     border-color: var(--text);
 }
 
-.section-title[data-font-family="font1"] {
+.section-title[data-font-family="novice witch"] {
     font-family: 'novice witch', sans-serif;
     font-variation-settings: 'wght' 700;
     text-transform: none;
     letter-spacing: 0.05em;
 }
 
-.section-title[data-font-family="font2"] {
+.section-title[data-font-family="change the web"] {
     font-family: 'change the web', sans-serif;
     font-variation-settings: 'wght' 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-.section-title[data-font-family="font3"] {
+.section-title[data-font-family="lost times"] {
     font-family: 'lost times', sans-serif;
     font-variation-settings: 'wght' 500;
     text-transform: none;
